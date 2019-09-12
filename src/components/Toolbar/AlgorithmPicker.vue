@@ -21,7 +21,7 @@ export default {
         { value: 'bubble', label: 'Bubble Sort' },
         { value: 'insertion', label: 'Insertion Sort', disabled: true },
         { value: 'selection', label: 'Selection Sort' },
-        { value: 'merge', label: 'Merge Sort', disabled: true },
+        { value: 'merge', label: 'Merge Sort' },
         { value: 'heap', label: 'Heap Sort', disabled: true },
         { value: 'quick', label: 'Quick Sort', disabled: true },
       ],

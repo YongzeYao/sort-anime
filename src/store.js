@@ -15,6 +15,7 @@ export default new Vuex.Store({
     insertionTwo: [],
     currentMax: [],
     selectionTwo: [],
+    comparingTwo: [],
   },
   mutations: {
     setArray(state, newArray) {
@@ -74,6 +75,9 @@ export default new Vuex.Store({
       if (swapper) {
         this.commit('setSwapper', swapper);
       }
+    },
+    setComparingTwo(state, newComparingTwo) {
+      state.comparingTwo = newComparingTwo;
     },
   },
 });

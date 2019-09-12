@@ -47,13 +47,12 @@ export default function selectionSort(store) {
 }
 
 function handleDispatches(toDispatch, store) {
+  // finished sorting
   if (!toDispatch.length) {
-    // finished sorting
-    setTimeout(() => {
-      store.commit('setSwapper', []); // clear swapper
-      store.commit('setSorted', store.state.array.map((num, index) => index));
-      store.commit('setIsAnimating', false);
-    }, store.state.interval);
+    store.commit('setSwapper', []); // clear swapper
+    store.commit('setSorted', store.state.array.map((num, index) => index));
+    store.commit('setIsAnimating', false);
+    store.commit('setSelectionTwo', []);
     return;
   }
 

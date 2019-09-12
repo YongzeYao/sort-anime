@@ -30,12 +30,9 @@ function handleDispatches(toDispatch, store) {
   const array = store.state.array.slice();
   if (!toDispatch.length) {
     // all sorted
-    store.commit('setBubbleTwo', array.map((num, index) => index));
-    setTimeout(() => {
-      store.commit('setBubbleTwo', []); // clear bubbleTwo
-      store.commit('setSorted', array.map((num, index) => index));
-      store.commit('setIsAnimating', false);
-    }, store.state.interval);
+    store.commit('setBubbleTwo', []); // clear bubbleTwo
+    store.commit('setSorted', array.map((num, index) => index));
+    store.commit('setIsAnimating', false);
     return;
   }
 

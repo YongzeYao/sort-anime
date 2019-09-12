@@ -18,6 +18,7 @@ import IntervalInput from './IntervalInput';
 
 import bubbleSort from './algorithms/bubbleSort';
 import selectionSort from './algorithms/selectionSort';
+import mergeSort from './algorithms/mergeSort';
 
 export default {
   components: {
@@ -39,6 +40,9 @@ export default {
           break;
         case 'selection':
           selectionSort(this.$store);
+          break;
+        case 'merge':
+          mergeSort(this.$store);
           break;
         default:
           console.log(`Not implemented`);

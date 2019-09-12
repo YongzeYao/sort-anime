@@ -26,6 +26,7 @@ export default {
       const swapper = this.swapper;
       const currentMax = this.currentMax;
       const selectionTwo = this.selectionTwo;
+      const comparingTwo = this.comparingTwo;
       const margin =
         array.length < 5
           ? 10
@@ -40,14 +41,16 @@ export default {
           : 1;
       const borderColor = swapper.includes(index)
         ? colorDanger
-        : sorted.includes(index)
-        ? colorPrimary
         : currentMax.includes(index)
         ? colorSuccess
+        : comparingTwo.includes(index)
+        ? colorWarning
         : selectionTwo.includes(index)
         ? colorWarning
         : bubbleTwo.includes(index)
         ? colorWarning
+        : sorted.includes(index)
+        ? colorPrimary
         : colorInfo;
       return {
         width: this.barSize,
@@ -68,6 +71,7 @@ export default {
       'currentMax',
       'algorithm',
       'selectionTwo',
+      'comparingTwo',
     ]),
     barSize() {
       return (

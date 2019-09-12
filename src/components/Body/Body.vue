@@ -22,10 +22,8 @@ export default {
     generateStyle(val, index) {
       const array = this.array;
       const sorted = this.sorted;
-      const bubbleTwo = this.bubbleTwo;
       const swapper = this.swapper;
       const currentMax = this.currentMax;
-      const selectionTwo = this.selectionTwo;
       const comparingTwo = this.comparingTwo;
       const margin =
         array.length < 5

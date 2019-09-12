@@ -55,5 +55,25 @@ export default new Vuex.Store({
     setSelectionTwo(state, newSelectionTwo) {
       state.selectionTwo = newSelectionTwo;
     },
+    setSelectionRelated(
+      state,
+      { sorted, array, selectionTwo, currentMax, swapper }
+    ) {
+      if (array) {
+        this.commit('setArray', array);
+      }
+      if (sorted) {
+        this.commit('setSorted', sorted);
+      }
+      if (selectionTwo) {
+        this.commit('setSelectionTwo', selectionTwo);
+      }
+      if (currentMax) {
+        this.commit('setCurrentMax', currentMax);
+      }
+      if (swapper) {
+        this.commit('setSwapper', swapper);
+      }
+    },
   },
 });

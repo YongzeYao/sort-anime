@@ -7,7 +7,7 @@ export default function selectionSort(store) {
       type: 'setCurrentMax',
       payload: [max],
     });
-    for (let j = 0; j <= i; j++) {
+    for (let j = 1; j <= i; j++) {
       toDispatch.push({
         type: 'setSelectionTwo',
         payload: [j, max],
@@ -15,12 +15,11 @@ export default function selectionSort(store) {
       if (arr[j] > arr[max]) {
         max = j;
         toDispatch.push({
-          type: 'setSelectionTwo',
-          payload: [j, max],
-        });
-        toDispatch.push({
-          type: 'setCurrentMax',
-          payload: [max],
+          type: 'setSelectionRelated',
+          payload: {
+            currentMax: [max],
+            selectionTwo: [],
+          },
         });
       }
     }
@@ -34,24 +33,14 @@ export default function selectionSort(store) {
       });
     }
     toDispatch.push({
-      type: 'setCurrentMax',
-      payload: [],
-    });
-    toDispatch.push({
-      type: 'setSelectionTwo',
-      payload: [],
-    });
-    toDispatch.push({
-      type: 'setArray',
-      payload: arr.slice(),
-    });
-    toDispatch.push({
-      type: 'setSwapper',
-      payload: [],
-    });
-    toDispatch.push({
-      type: 'setSorted',
-      payload: [i],
+      type: 'setSelectionRelated',
+      payload: {
+        sorted: [i],
+        array: arr.slice(),
+        currentMax: [],
+        swapper: [],
+        selectionTwo: [],
+      },
     });
   }
   handleDispatches(toDispatch, store);

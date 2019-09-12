@@ -34,12 +34,16 @@ export default function selectionSort(store) {
       });
     }
     toDispatch.push({
-      type: 'setArray',
-      payload: arr.slice(),
+      type: 'setCurrentMax',
+      payload: [],
     });
     toDispatch.push({
       type: 'setSelectionTwo',
       payload: [],
+    });
+    toDispatch.push({
+      type: 'setArray',
+      payload: arr.slice(),
     });
     toDispatch.push({
       type: 'setSwapper',
@@ -48,10 +52,6 @@ export default function selectionSort(store) {
     toDispatch.push({
       type: 'setSorted',
       payload: [i],
-    });
-    toDispatch.push({
-      type: 'setCurrentMax',
-      payload: [],
     });
   }
   handleDispatches(toDispatch, store);

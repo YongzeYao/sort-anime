@@ -19,10 +19,10 @@ export default {
     return {
       algorithms: [
         { value: 'bubble', label: 'Bubble Sort' },
-        { value: 'insertion', label: 'Insertion Sort', disabled: true },
+        // { value: 'insertion', label: 'Insertion Sort', disabled: true },
         { value: 'selection', label: 'Selection Sort' },
         { value: 'merge', label: 'Merge Sort' },
-        { value: 'heap', label: 'Heap Sort', disabled: true },
+        { value: 'heap', label: 'Heap Sort' },
         { value: 'quick', label: 'Quick Sort', disabled: true },
       ],
     };

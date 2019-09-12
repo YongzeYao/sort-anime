@@ -32,11 +32,12 @@ export default new Vuex.Store({
       state.algorithm = newAlgorithm;
     },
     setSwapper(state, newSwapper) {
-      if (newSwapper.length) {
-        state.swapper.push(...newSwapper);
-      } else {
-        state.swapper = [];
-      }
+      // if (newSwapper.length) {
+      //   state.swapper.push(...newSwapper);
+      // } else {
+      //   state.swapper = [];
+      // }
+      state.swapper = newSwapper;
     },
     setBubbleTwo(state, newBubbleTwo) {
       state.bubbleTwo = newBubbleTwo;
@@ -78,6 +79,10 @@ export default new Vuex.Store({
     },
     setComparingTwo(state, newComparingTwo) {
       state.comparingTwo = newComparingTwo;
+    },
+    setSwapperAndComparingTwo(state, { swapper, comparingTwo }) {
+      this.commit('setSwapper', swapper);
+      this.commit('setComparingTwo', comparingTwo);
     },
   },
 });

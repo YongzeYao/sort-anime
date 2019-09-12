@@ -45,10 +45,6 @@ export default {
         ? colorSuccess
         : comparingTwo.includes(index)
         ? colorWarning
-        : selectionTwo.includes(index)
-        ? colorWarning
-        : bubbleTwo.includes(index)
-        ? colorWarning
         : sorted.includes(index)
         ? colorPrimary
         : colorInfo;
@@ -66,11 +62,9 @@ export default {
     ...mapState([
       'array',
       'sorted',
-      'bubbleTwo',
       'swapper',
       'currentMax',
       'algorithm',
-      'selectionTwo',
       'comparingTwo',
     ]),
     barSize() {

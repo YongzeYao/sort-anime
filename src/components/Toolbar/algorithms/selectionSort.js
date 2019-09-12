@@ -9,7 +9,7 @@ export default function selectionSort(store) {
     });
     for (let j = 1; j <= i; j++) {
       toDispatch.push({
-        type: 'setSelectionTwo',
+        type: 'setComparingTwo',
         payload: [j, max],
       });
       if (arr[j] > arr[max]) {
@@ -18,7 +18,7 @@ export default function selectionSort(store) {
           type: 'setSelectionRelated',
           payload: {
             currentMax: [max],
-            selectionTwo: [],
+            comparingTwo: [],
           },
         });
       }
@@ -39,7 +39,7 @@ export default function selectionSort(store) {
         array: arr.slice(),
         currentMax: [],
         swapper: [],
-        selectionTwo: [],
+        comparingTwo: [],
       },
     });
   }
@@ -52,7 +52,7 @@ function handleDispatches(toDispatch, store) {
     store.commit('setSwapper', []); // clear swapper
     store.commit('setSorted', store.state.array.map((num, index) => index));
     store.commit('setIsAnimating', false);
-    store.commit('setSelectionTwo', []);
+    store.commit('setComparingTwo', []);
     return;
   }
 

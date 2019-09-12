@@ -5,19 +5,34 @@ export default function bubbleSort(store) {
   for (let i = array.length - 1; i > 0; i--) {
     let sorted = true;
     for (let j = 0; j < i; j++) {
-      toDispatch.push([j, j + 1]); // bubbleTwo
+      toDispatch.push({
+        type: 'setComparingTwo',
+        payload: [j, j + 1],
+      });
       if (array[j] > array[j + 1]) {
-        toDispatch.push([j, j + 1, true]); // swapper
+        toDispatch.push({
+          type: 'setSwapper',
+          payload: [j, j + 1],
+        });
         let temp = array[j];
         array[j] = array[j + 1];
         array[j + 1] = temp;
         sorted = false;
-        toDispatch.push(array.slice()); // new array
-        toDispatch.push([]); // clear swapper
+        toDispatch.push({
+          type: 'setArray',
+          payload: array.slice(),
+        });
+        toDispatch.push({
+          type: 'setSwapper',
+          payload: [],
+        });
       }
     }
 
-    toDispatch.push([true, i]); // sorted
+    toDispatch.push({
+      type: 'setSorted',
+      payload: [i],
+    });
     if (sorted) {
       break;
     }
@@ -29,26 +44,14 @@ export default function bubbleSort(store) {
 function handleDispatches(toDispatch, store) {
   const array = store.state.array.slice();
   if (!toDispatch.length) {
-    // all sorted
-    store.commit('setBubbleTwo', []); // clear bubbleTwo
+    store.commit('setComparingTwo', []);
     store.commit('setSorted', array.map((num, index) => index));
     store.commit('setIsAnimating', false);
     return;
   }
 
-  let currentDispatch = toDispatch.shift();
-  if (currentDispatch.length > 3) {
-    store.commit('setArray', currentDispatch);
-  } else if (currentDispatch.length === 3 || currentDispatch.length === 0) {
-    store.commit('setSwapper', currentDispatch);
-  } else if (
-    currentDispatch.length === 2 &&
-    typeof currentDispatch[0] === 'boolean'
-  ) {
-    store.commit('setSorted', currentDispatch);
-  } else {
-    store.commit('setBubbleTwo', currentDispatch);
-  }
+  let { type, payload } = toDispatch.shift();
+  store.commit(type, payload);
   setTimeout(() => {
     handleDispatches(toDispatch, store);
   }, store.state.interval);

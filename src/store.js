@@ -11,8 +11,6 @@ export default new Vuex.Store({
     array: [],
     sorted: [],
     swapper: [],
-    bubbleTwo: [],
-    insertionTwo: [],
     currentMax: [],
     selectionTwo: [],
     comparingTwo: [],
@@ -32,24 +30,13 @@ export default new Vuex.Store({
       state.algorithm = newAlgorithm;
     },
     setSwapper(state, newSwapper) {
-      // if (newSwapper.length) {
-      //   state.swapper.push(...newSwapper);
-      // } else {
-      //   state.swapper = [];
-      // }
       state.swapper = newSwapper;
-    },
-    setBubbleTwo(state, newBubbleTwo) {
-      state.bubbleTwo = newBubbleTwo;
     },
     setIsAnimating(state, newIsAnimating) {
       state.isAnimating = newIsAnimating;
     },
     setInterval(state, newInterval) {
       state.interval = newInterval;
-    },
-    setInsertionTwo(state, newInsertionTwo) {
-      state.insertionTwo = newInsertionTwo;
     },
     setCurrentMax(state, newCurrentMax) {
       state.currentMax = newCurrentMax;
@@ -59,7 +46,7 @@ export default new Vuex.Store({
     },
     setSelectionRelated(
       state,
-      { sorted, array, selectionTwo, currentMax, swapper }
+      { sorted, array, comparingTwo, currentMax, swapper }
     ) {
       if (array) {
         this.commit('setArray', array);
@@ -67,8 +54,8 @@ export default new Vuex.Store({
       if (sorted) {
         this.commit('setSorted', sorted);
       }
-      if (selectionTwo) {
-        this.commit('setSelectionTwo', selectionTwo);
+      if (comparingTwo) {
+        this.commit('setComparingTwo', comparingTwo);
       }
       if (currentMax) {
         this.commit('setCurrentMax', currentMax);

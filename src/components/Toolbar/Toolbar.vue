@@ -28,6 +28,7 @@ import bubbleSort from './algorithms/bubbleSort';
 import selectionSort from './algorithms/selectionSort';
 import mergeSort from './algorithms/mergeSort';
 import heapSort from './algorithms/heapSort';
+import quickSort from './algorithms/quickSort';
 
 export default {
   components: {
@@ -66,6 +67,9 @@ export default {
           break;
         case 'heap':
           heapSort(this.$store);
+          break;
+        case 'quick':
+          quickSort(this.$store);
           break;
         default:
           console.log(`Not implemented`);

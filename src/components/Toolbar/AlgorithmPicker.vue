@@ -23,7 +23,7 @@ export default {
         { value: 'selection', label: 'Selection Sort' },
         { value: 'merge', label: 'Merge Sort' },
         { value: 'heap', label: 'Heap Sort' },
-        { value: 'quick', label: 'Quick Sort', disabled: true },
+        { value: 'quick', label: 'Quick Sort' },
       ],
     };
   },

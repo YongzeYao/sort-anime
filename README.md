@@ -1,35 +1,13 @@
 # sort-anime
 
-## Project setup
+## What is this ?
 
-```
-npm install
-```
+This is an animated representation of basic sorting algorithms.
 
-### Compiles and hot-reloads for development
+## What framework is this built with ?
 
-```
-npm run serve
-```
+Vue.js !
 
-### Compiles and minifies for production
+## What do I need to do if I land on this page?
 
-```
-npm run build
-```
-
-### Run your tests
-
-```
-npm run test
-```
-
-### Lints and fixes files
-
-```
-npm run lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Star !

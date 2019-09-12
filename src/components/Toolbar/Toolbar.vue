@@ -14,6 +14,14 @@
     <el-button @click="sort" :disabled="isAnimating" round plain type="primary"
       >Sort</el-button
     >
+    <el-link
+      :underline="false"
+      target="_blank"
+      class="github-link"
+      href="https://github.com/YongzeYao/sort-anime"
+      type="primary"
+      >GitHub</el-link
+    >
   </div>
 </template>
 
@@ -85,5 +93,10 @@ export default {
   align-items: center;
   height: 100%;
   border-bottom: 1px solid #dcdfe6;
+}
+
+.github-link {
+  position: absolute;
+  right: 20px;
 }
 </style>

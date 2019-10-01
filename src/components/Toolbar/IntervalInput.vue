@@ -1,6 +1,6 @@
 <template>
   <div class="interval-input">
-    <span>Anime Speed: </span>
+    <span>Animation Interval: </span>
     <el-input
       :disabled="isAnimating"
       class="input"
